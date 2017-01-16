@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2659" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_5" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -20,72 +20,87 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="VpE-Cm-5Sz">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="QLa-aZ-uyj">
-                                <rect key="frame" x="20" y="20" width="374" height="716"/>
+                                <rect key="frame" x="16" y="20" width="288" height="548"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="JokerBoard" translatesAutoresizingMaskIntoConstraints="NO" id="nmp-5p-7hL">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="249.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="192"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="nmp-5p-7hL" secondAttribute="height" multiplier="1600:1067" id="MTh-ie-gab"/>
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="JokerIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Cj8-us-7jd">
-                                        <rect key="frame" x="153.66666666666666" y="269.33333333333331" width="66.666666666666686" height="101"/>
+                                        <rect key="frame" x="121" y="212" width="46" height="71.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Cj8-us-7jd" secondAttribute="height" multiplier="263:400" id="a99-qT-Fua"/>
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Ugv-ia-hPK">
-                                        <rect key="frame" x="10" y="390.33333333333337" width="354" height="153.00000000000011"/>
+                                        <rect key="frame" x="10" y="303.5" width="268" height="112"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3VW-VG-fHP">
-                                                <rect key="frame" x="0.0" y="0.0" width="108" height="153.00000000000006"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="79" height="112"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="3VW-VG-fHP" secondAttribute="height" multiplier="120:170" id="FX7-CC-nQT"/>
                                                 </constraints>
                                                 <state key="normal" image="back"/>
+                                                <connections>
+                                                    <action selector="cardInHand1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Pp-J7-WLi"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ug1-3W-wcr">
-                                                <rect key="frame" x="123" y="0.0" width="108" height="153.00000000000006"/>
+                                                <rect key="frame" x="94" y="0.0" width="80" height="112"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="ug1-3W-wcr" secondAttribute="height" multiplier="12:17" id="NFD-oZ-azg"/>
                                                 </constraints>
                                                 <state key="normal" image="back"/>
+                                                <connections>
+                                                    <action selector="cardInHand2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F3r-Kd-59c"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fg0-SA-l6A">
-                                                <rect key="frame" x="246" y="0.0" width="108" height="153.00000000000006"/>
+                                                <rect key="frame" x="189" y="0.0" width="79" height="112"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Fg0-SA-l6A" secondAttribute="height" multiplier="12:17" id="wMr-X7-xPT"/>
                                                 </constraints>
                                                 <state key="normal" image="back"/>
+                                                <connections>
+                                                    <action selector="cardInHand3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yRv-hm-gsj"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="TUt-bQ-OBf">
-                                        <rect key="frame" x="10" y="563.33333333333348" width="354" height="152.66666666666663"/>
+                                        <rect key="frame" x="10" y="435.5" width="268" height="112.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5u3-xY-I34">
-                                                <rect key="frame" x="0.0" y="0.0" width="108" height="152.66666666666663"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="79" height="112.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="5u3-xY-I34" secondAttribute="height" multiplier="120:170" id="mVF-cD-Zn0"/>
                                                 </constraints>
                                                 <state key="normal" image="back"/>
+                                                <connections>
+                                                    <action selector="cardInHand4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6CQ-cV-C0d"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dNu-0l-DoG">
-                                                <rect key="frame" x="123" y="0.0" width="108" height="152.66666666666663"/>
+                                                <rect key="frame" x="94" y="0.0" width="80" height="112.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="dNu-0l-DoG" secondAttribute="height" multiplier="12:17" id="Ab5-Dj-zfr"/>
                                                 </constraints>
                                                 <state key="normal" image="back"/>
+                                                <connections>
+                                                    <action selector="cardInHand5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lwu-QG-b0j"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGx-sk-fKA">
-                                                <rect key="frame" x="246" y="0.0" width="108" height="152.66666666666663"/>
+                                                <rect key="frame" x="189" y="0.0" width="79" height="112.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="xGx-sk-fKA" secondAttribute="height" multiplier="12:17" id="RAU-E7-zKR"/>
                                                 </constraints>
@@ -126,6 +141,6 @@
         <image name="JokerBoard" width="1600" height="1067"/>
         <image name="JokerIcon" width="263" height="400"/>
         <image name="back" width="120" height="170"/>
-        <image name="background" width="666" height="621"/>
+        <image name="background" width="667" height="621"/>
     </resources>
 </document>
