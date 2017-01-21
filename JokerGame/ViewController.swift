@@ -8,7 +8,7 @@
 
 import UIKit
 
-class View: UIViewController {
+class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ class View: UIViewController {
 
     @IBAction func cardInHand1(_ sender: UIButton) {
         //Tell Controller class button was clicked
-        Controller.card1Called()
+        //Controller.card1Called()
     }
     @IBAction func cardInHand2(_ sender: UIButton) {
     }
@@ -40,7 +40,7 @@ class View: UIViewController {
     }
 
 }
-
+/*
 class Controller {
     func card1Called() {
         //Called from View when card1 is clicked
@@ -48,3 +48,4 @@ class Controller {
     }
 
 }
+*/
