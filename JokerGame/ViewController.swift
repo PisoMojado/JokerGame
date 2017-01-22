@@ -52,8 +52,21 @@ struct FrenchCard: Card {
     }
 
     func getCardName(card: FrenchCard) -> String {
-        var cardString: String
-        cardString = String(card.rank.rawValue)
+        var cardString: String = ""
+        var cardStringRank: String
+        cardStringRank = String(card.rank.rawValue)
+        switch cardStringRank {
+        case "1":
+           cardString += "A"
+        case "11":
+           cardString += "J"
+        case "12":
+           cardString += "Q"
+        case "13":
+           cardString += "K"
+        default:
+           cardString += cardStringRank
+        }
         cardString += card.suit.rawValue
 
         return cardString
@@ -101,6 +114,12 @@ struct Deck {
     mutating func addCards(cards: [Card]) {
         self.cards += cards
     }
+    
+    mutating func removeCards(num:Int, cards: [Card]) {
+        for i in 1...num {
+            self.cards.remove(at: i)
+        }
+    }
 }
 
 class ViewController: UIViewController {
@@ -129,19 +148,49 @@ class ViewController: UIViewController {
         //Controller.card1Called()
         let topCard:FrenchCard = myDeck.cards[0] as! FrenchCard
         let cardName: String = topCard.getCardName(card: topCard)
-        print(cardName)
+        print("\(cardName)")
         sender.setImage(UIImage(named: cardName+".png"), for: UIControlState.normal)
+        myDeck.removeCards(num: 1, cards: myDeck.cards)
 
     }
     @IBAction func cardInHand2(_ sender: UIButton) {
+        let topCard:FrenchCard = myDeck.cards[0] as! FrenchCard
+        let cardName: String = topCard.getCardName(card: topCard)
+        print("\(cardName)")
+        sender.setImage(UIImage(named: cardName+".png"), for: UIControlState.normal)
+        myDeck.removeCards(num: 1, cards: myDeck.cards)
     }
+    
     @IBAction func cardInHand3(_ sender: UIButton) {
+        let topCard:FrenchCard = myDeck.cards[0] as! FrenchCard
+        let cardName: String = topCard.getCardName(card: topCard)
+        print("\(cardName)")
+        sender.setImage(UIImage(named: cardName+".png"), for: UIControlState.normal)
+        myDeck.removeCards(num: 1, cards: myDeck.cards)
     }
+    
     @IBAction func cardInHand4(_ sender: UIButton) {
+        let topCard:FrenchCard = myDeck.cards[0] as! FrenchCard
+        let cardName: String = topCard.getCardName(card: topCard)
+        print("\(cardName)")
+        sender.setImage(UIImage(named: cardName+".png"), for: UIControlState.normal)
+        myDeck.removeCards(num: 1, cards: myDeck.cards)
     }
+    
     @IBAction func cardInHand5(_ sender: UIButton) {
+        let topCard:FrenchCard = myDeck.cards[0] as! FrenchCard
+        let cardName: String = topCard.getCardName(card: topCard)
+        print("\(cardName)")
+        sender.setImage(UIImage(named: cardName+".png"), for: UIControlState.normal)
+        myDeck.removeCards(num: 1, cards: myDeck.cards)
     }
+    
     @IBAction func cardInHand6(_ sender: UIButton) {
+        let topCard:FrenchCard = myDeck.cards[0] as! FrenchCard
+        let cardName: String = topCard.getCardName(card: topCard)
+        print("\(cardName)")
+        sender.setImage(UIImage(named: cardName+".png"), for: UIControlState.normal)
+        myDeck.removeCards(num: 1, cards: myDeck.cards)
     }
 
 }
