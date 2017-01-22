@@ -116,7 +116,7 @@ struct Deck {
     }
     
     mutating func removeCards(num:Int, cards: [Card]) {
-        for i in 1...num {
+        for i in 0...(num-1) {
             self.cards.remove(at: i)
         }
     }
@@ -126,6 +126,7 @@ class ViewController: UIViewController {
 
     var myDeck = Deck()
     var topCardName: String = ""
+    var selectedCard: Int = 0
  
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -146,6 +147,7 @@ class ViewController: UIViewController {
     @IBAction func cardInHand1(_ sender: UIButton) {
         //Tell Controller class button was clicked
         //Controller.card1Called()
+        selectedCard = 1
         let topCard:FrenchCard = myDeck.cards[0] as! FrenchCard
         let cardName: String = topCard.getCardName(card: topCard)
         print("\(cardName)")
@@ -154,6 +156,7 @@ class ViewController: UIViewController {
 
     }
     @IBAction func cardInHand2(_ sender: UIButton) {
+        selectedCard = 2
         let topCard:FrenchCard = myDeck.cards[0] as! FrenchCard
         let cardName: String = topCard.getCardName(card: topCard)
         print("\(cardName)")
@@ -162,6 +165,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func cardInHand3(_ sender: UIButton) {
+        selectedCard = 3
         let topCard:FrenchCard = myDeck.cards[0] as! FrenchCard
         let cardName: String = topCard.getCardName(card: topCard)
         print("\(cardName)")
@@ -170,6 +174,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func cardInHand4(_ sender: UIButton) {
+        selectedCard = 4
         let topCard:FrenchCard = myDeck.cards[0] as! FrenchCard
         let cardName: String = topCard.getCardName(card: topCard)
         print("\(cardName)")
@@ -178,7 +183,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func cardInHand5(_ sender: UIButton) {
-        let topCard:FrenchCard = myDeck.cards[0] as! FrenchCard
+        selectedCard = 5
+       let topCard:FrenchCard = myDeck.cards[0] as! FrenchCard
         let cardName: String = topCard.getCardName(card: topCard)
         print("\(cardName)")
         sender.setImage(UIImage(named: cardName+".png"), for: UIControlState.normal)
@@ -186,6 +192,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func cardInHand6(_ sender: UIButton) {
+        selectedCard = 6
         let topCard:FrenchCard = myDeck.cards[0] as! FrenchCard
         let cardName: String = topCard.getCardName(card: topCard)
         print("\(cardName)")

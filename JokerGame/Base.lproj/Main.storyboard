@@ -36,13 +36,13 @@
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="JokerIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Cj8-us-7jd">
-                                        <rect key="frame" x="121" y="212" width="46" height="71.5"/>
+                                        <rect key="frame" x="121" y="212" width="47" height="72"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Cj8-us-7jd" secondAttribute="height" multiplier="263:400" id="a99-qT-Fua"/>
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Ugv-ia-hPK">
-                                        <rect key="frame" x="10" y="303.5" width="268" height="112"/>
+                                        <rect key="frame" x="10" y="304" width="268" height="112"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3VW-VG-fHP">
                                                 <rect key="frame" x="0.0" y="0.0" width="79" height="112"/>
@@ -77,10 +77,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="TUt-bQ-OBf">
-                                        <rect key="frame" x="10" y="435.5" width="268" height="112.5"/>
+                                        <rect key="frame" x="10" y="436" width="268" height="112"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5u3-xY-I34">
-                                                <rect key="frame" x="0.0" y="0.0" width="79" height="112.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="79" height="112"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="5u3-xY-I34" secondAttribute="height" multiplier="120:170" id="mVF-cD-Zn0"/>
                                                 </constraints>
@@ -90,7 +90,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dNu-0l-DoG">
-                                                <rect key="frame" x="94" y="0.0" width="80" height="112.5"/>
+                                                <rect key="frame" x="94" y="0.0" width="80" height="112"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="dNu-0l-DoG" secondAttribute="height" multiplier="12:17" id="Ab5-Dj-zfr"/>
                                                 </constraints>
@@ -100,11 +100,14 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGx-sk-fKA">
-                                                <rect key="frame" x="189" y="0.0" width="79" height="112.5"/>
+                                                <rect key="frame" x="189" y="0.0" width="79" height="112"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="xGx-sk-fKA" secondAttribute="height" multiplier="12:17" id="RAU-E7-zKR"/>
                                                 </constraints>
                                                 <state key="normal" image="back"/>
+                                                <connections>
+                                                    <action selector="cardInHand6:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Edj-w9-aMf"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
