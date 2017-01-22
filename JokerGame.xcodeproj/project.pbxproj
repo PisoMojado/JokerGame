@@ -12,6 +12,10 @@
 		388CF6D91E28B3CB00EE1A70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 388CF6D71E28B3CB00EE1A70 /* Main.storyboard */; };
 		388CF6DB1E28B3CB00EE1A70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 388CF6DA1E28B3CB00EE1A70 /* Assets.xcassets */; };
 		388CF6DE1E28B3CB00EE1A70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 388CF6DC1E28B3CB00EE1A70 /* LaunchScreen.storyboard */; };
+		4C20E5931E3572A000850080 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C20E5921E3572A000850080 /* Deck.swift */; };
+		4C20E5951E3572B400850080 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C20E5941E3572B400850080 /* Card.swift */; };
+		4C20E5971E3572C000850080 /* FrenchCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C20E5961E3572C000850080 /* FrenchCard.swift */; };
+		4C20E5991E35730D00850080 /* Joker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C20E5981E35730D00850080 /* Joker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		388CF6DA1E28B3CB00EE1A70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		388CF6DD1E28B3CB00EE1A70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		388CF6DF1E28B3CB00EE1A70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C20E5921E3572A000850080 /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		4C20E5941E3572B400850080 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		4C20E5961E3572C000850080 /* FrenchCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrenchCard.swift; sourceTree = "<group>"; };
+		4C20E5981E35730D00850080 /* Joker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Joker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +68,10 @@
 				388CF6DA1E28B3CB00EE1A70 /* Assets.xcassets */,
 				388CF6DC1E28B3CB00EE1A70 /* LaunchScreen.storyboard */,
 				388CF6DF1E28B3CB00EE1A70 /* Info.plist */,
+				4C20E5921E3572A000850080 /* Deck.swift */,
+				4C20E5941E3572B400850080 /* Card.swift */,
+				4C20E5961E3572C000850080 /* FrenchCard.swift */,
+				4C20E5981E35730D00850080 /* Joker.swift */,
 			);
 			path = JokerGame;
 			sourceTree = "<group>";
@@ -136,8 +148,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C20E5931E3572A000850080 /* Deck.swift in Sources */,
 				388CF6D61E28B3CB00EE1A70 /* ViewController.swift in Sources */,
 				388CF6D41E28B3CB00EE1A70 /* AppDelegate.swift in Sources */,
+				4C20E5951E3572B400850080 /* Card.swift in Sources */,
+				4C20E5971E3572C000850080 /* FrenchCard.swift in Sources */,
+				4C20E5991E35730D00850080 /* Joker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +313,7 @@
 				388CF6E41E28B3CB00EE1A70 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
