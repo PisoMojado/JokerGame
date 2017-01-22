@@ -139,64 +139,73 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    func dealNewCard() {
-        
-    }
+
 
     @IBAction func cardInHand1(_ sender: UIButton) {
         //Tell Controller class button was clicked
         //Controller.card1Called()
         selectedCard = 1
-        let topCard:FrenchCard = myDeck.cards[0] as! FrenchCard
-        let cardName: String = topCard.getCardName(card: topCard)
-        print("\(cardName)")
-        sender.setImage(UIImage(named: cardName+".png"), for: UIControlState.normal)
-        myDeck.removeCards(num: 1, cards: myDeck.cards)
-
     }
+    
     @IBAction func cardInHand2(_ sender: UIButton) {
         selectedCard = 2
-        let topCard:FrenchCard = myDeck.cards[0] as! FrenchCard
-        let cardName: String = topCard.getCardName(card: topCard)
-        print("\(cardName)")
-        sender.setImage(UIImage(named: cardName+".png"), for: UIControlState.normal)
-        myDeck.removeCards(num: 1, cards: myDeck.cards)
     }
     
     @IBAction func cardInHand3(_ sender: UIButton) {
         selectedCard = 3
-        let topCard:FrenchCard = myDeck.cards[0] as! FrenchCard
-        let cardName: String = topCard.getCardName(card: topCard)
-        print("\(cardName)")
-        sender.setImage(UIImage(named: cardName+".png"), for: UIControlState.normal)
-        myDeck.removeCards(num: 1, cards: myDeck.cards)
     }
     
     @IBAction func cardInHand4(_ sender: UIButton) {
         selectedCard = 4
-        let topCard:FrenchCard = myDeck.cards[0] as! FrenchCard
-        let cardName: String = topCard.getCardName(card: topCard)
-        print("\(cardName)")
-        sender.setImage(UIImage(named: cardName+".png"), for: UIControlState.normal)
-        myDeck.removeCards(num: 1, cards: myDeck.cards)
     }
     
     @IBAction func cardInHand5(_ sender: UIButton) {
         selectedCard = 5
-       let topCard:FrenchCard = myDeck.cards[0] as! FrenchCard
-        let cardName: String = topCard.getCardName(card: topCard)
-        print("\(cardName)")
-        sender.setImage(UIImage(named: cardName+".png"), for: UIControlState.normal)
-        myDeck.removeCards(num: 1, cards: myDeck.cards)
     }
     
     @IBAction func cardInHand6(_ sender: UIButton) {
         selectedCard = 6
+    }
+    
+    @IBAction func submitButton(_ sender: UIButton) {
+        let topCard:FrenchCard = myDeck.cards[0] as! FrenchCard
+        if selectedCard >= 1 && selectedCard <= 6 {
+          dealCard(card: topCard, cardNumber: selectedCard)
+        }
+        else {
+        print("No card selected. Please select a card!")
+        }
+        
+    }
+
+    @IBOutlet weak var submit: UIButton!
+    @IBOutlet weak var card1: UIButton!
+    @IBOutlet weak var card2: UIButton!
+    @IBOutlet weak var card3: UIButton!
+    @IBOutlet weak var card4: UIButton!
+    @IBOutlet weak var card5: UIButton!
+    @IBOutlet weak var card6: UIButton!
+    
+    func dealCard(card: Card, cardNumber: Int) {
         let topCard:FrenchCard = myDeck.cards[0] as! FrenchCard
         let cardName: String = topCard.getCardName(card: topCard)
         print("\(cardName)")
-        sender.setImage(UIImage(named: cardName+".png"), for: UIControlState.normal)
+        switch cardNumber {
+        case 1:
+           self.card1.setImage(UIImage(named: cardName+".png"), for: UIControlState.normal)
+        case 2:
+            self.card2.setImage(UIImage(named: cardName+".png"), for: UIControlState.normal)
+        case 3:
+            self.card3.setImage(UIImage(named: cardName+".png"), for: UIControlState.normal)
+        case 4:
+            self.card4.setImage(UIImage(named: cardName+".png"), for: UIControlState.normal)
+        case 5:
+            self.card5.setImage(UIImage(named: cardName+".png"), for: UIControlState.normal)
+        case 6:
+            self.card6.setImage(UIImage(named: cardName+".png"), for: UIControlState.normal)
+        default:
+            print("Invalid card selection")
+        }
         myDeck.removeCards(num: 1, cards: myDeck.cards)
     }
 

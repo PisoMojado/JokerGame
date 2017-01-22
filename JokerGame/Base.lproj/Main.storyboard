@@ -35,12 +35,16 @@
                                             <constraint firstAttribute="width" secondItem="nmp-5p-7hL" secondAttribute="height" multiplier="1600:1067" id="MTh-ie-gab"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="JokerIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Cj8-us-7jd">
-                                        <rect key="frame" x="121" y="212" width="47" height="72"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="Cj8-us-7jd" secondAttribute="height" multiplier="263:400" id="a99-qT-Fua"/>
-                                        </constraints>
-                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9H-HY-3cU">
+                                        <rect key="frame" x="112" y="212" width="64" height="72"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Submit">
+                                            <color key="titleColor" red="1" green="0.1535281600593249" blue="0.18411527848419873" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="submitButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="biY-DR-vFw"/>
+                                        </connections>
+                                    </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Ugv-ia-hPK">
                                         <rect key="frame" x="10" y="304" width="268" height="112"/>
                                         <subviews>
@@ -135,6 +139,15 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QLa-aZ-uyj" secondAttribute="bottom" id="oWd-Nc-ai2"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="card1" destination="3VW-VG-fHP" id="7Zn-f4-Tyi"/>
+                        <outlet property="card2" destination="ug1-3W-wcr" id="P3q-20-fwz"/>
+                        <outlet property="card3" destination="Fg0-SA-l6A" id="Bi3-qH-Vxh"/>
+                        <outlet property="card4" destination="5u3-xY-I34" id="Nej-rE-f3X"/>
+                        <outlet property="card5" destination="dNu-0l-DoG" id="7Yv-d4-2D3"/>
+                        <outlet property="card6" destination="xGx-sk-fKA" id="3Jb-zk-jyh"/>
+                        <outlet property="submit" destination="C9H-HY-3cU" id="8ko-mT-bGB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -142,7 +155,6 @@
     </scenes>
     <resources>
         <image name="JokerBoard" width="1600" height="1067"/>
-        <image name="JokerIcon" width="263" height="400"/>
         <image name="back" width="120" height="170"/>
         <image name="background" width="667" height="621"/>
     </resources>
