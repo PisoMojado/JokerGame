@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol Card {
+protocol Card : NamedData {
     
 }

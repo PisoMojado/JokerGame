@@ -12,7 +12,7 @@ class ViewController: UIViewController {
 
     var myDeck = Deck()
     var topCardName: String = ""
-    var selectedCard: Int = 0
+    var selectedCard: Int = 1
  
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,14 +54,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func submitButton(_ sender: UIButton) {
-        let topCard:FrenchCard = myDeck.cards[0] as! FrenchCard
-        if selectedCard >= 1 && selectedCard <= 6 {
-          dealCard(card: topCard, cardNumber: selectedCard)
-        }
-        else {
-        print("No card selected. Please select a card!")
-        }
-        
+        showTopCard()
+        dealCard()
     }
 
     @IBOutlet weak var submit: UIButton!
@@ -72,36 +66,37 @@ class ViewController: UIViewController {
     @IBOutlet weak var card5: UIButton!
     @IBOutlet weak var card6: UIButton!
     
-    func dealCard(card: Card, cardNumber: Int) {
-        let topCard:FrenchCard = myDeck.cards[0] as! FrenchCard
-        let cardName: String = topCard.getCardName(card: topCard)
-        print("\(cardName)")
-        switch cardNumber {
-        case 1:
-           self.card1.setImage(UIImage(named: cardName+".png"), for: UIControlState.normal)
-        case 2:
-            self.card2.setImage(UIImage(named: cardName+".png"), for: UIControlState.normal)
-        case 3:
-            self.card3.setImage(UIImage(named: cardName+".png"), for: UIControlState.normal)
-        case 4:
-            self.card4.setImage(UIImage(named: cardName+".png"), for: UIControlState.normal)
-        case 5:
-            self.card5.setImage(UIImage(named: cardName+".png"), for: UIControlState.normal)
-        case 6:
-            self.card6.setImage(UIImage(named: cardName+".png"), for: UIControlState.normal)
-        default:
-            print("Invalid card selection")
-        }
+    func dealCard() -> Card {
+        let topCard:Card = myDeck.cards[0]
         myDeck.removeCards(num: 1, cards: myDeck.cards)
+        return topCard
     }
-
-}
-/*
-class Controller {
-    func card1Called() {
-        //Called from View when card1 is clicked
-        
+    
+    func showTopCard() {
+        let topCard:Card = myDeck.cards[0]
+        let cardName = topCard.name
+        var card: UIButton
+        switch selectedCard {
+            case 1:
+                card = self.card1
+            case 2:
+                card = self.card2
+            case 3:
+                card = self.card3
+            case 4:
+                card = self.card4
+            case 5:
+                card = self.card5
+            case 6:
+                card = self.card6
+            default:
+                print("Please select a card!")
+                return
+        }
+        updateCardUI(card: card, cardName: cardName)
     }
-
+    
+    func updateCardUI(card: UIButton, cardName: String) {
+        card.setImage(UIImage(named: cardName+".png"), for: UIControlState.normal)
+    }
 }
-*/

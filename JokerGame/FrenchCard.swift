@@ -32,25 +32,10 @@ struct FrenchCard: Card {
         case Diamond = "Diamonds"
     }
     
-    let rank: Rank
-    let suit: Suit
-    
-    static func getAllCards() -> [Card] {
-        let ranks = [Rank.Ace, Rank.Two, Rank.Three, Rank.Four, Rank.Five, Rank.Six, Rank.Seven, Rank.Eight, Rank.Nine, Rank.Ten, Rank.Jack, Rank.Queen, Rank.King]
-        let suits = [Suit.Spade, Suit.Heart, Suit.Diamond, Suit.Club]
-        var cards = [Card]()
-        for suit in suits {
-            for rank in ranks {
-                cards.append(FrenchCard(rank: rank, suit: suit))
-            }
-        }
-        return cards
-    }
-    
-    func getCardName(card: FrenchCard) -> String {
+    private static func getCardName(rank: Rank, suit: Suit) -> String {
         var cardString: String = ""
         var cardStringRank: String
-        cardStringRank = String(card.rank.rawValue)
+        cardStringRank = String(rank.rawValue)
         switch cardStringRank {
         case "1":
             cardString += "A"
@@ -63,8 +48,30 @@ struct FrenchCard: Card {
         default:
             cardString += cardStringRank
         }
-        cardString += card.suit.rawValue
+        cardString += suit.rawValue
         
         return cardString
+    }
+    
+    let rank: Rank
+    let suit: Suit
+    var name: String
+    
+    init(rank: Rank, suit: Suit) {
+        self.rank = rank
+        self.suit = suit
+        name = FrenchCard.getCardName(rank: rank, suit: suit)
+    }
+    
+    static func getAllCards() -> [Card] {
+        let ranks = [Rank.Ace, Rank.Two, Rank.Three, Rank.Four, Rank.Five, Rank.Six, Rank.Seven, Rank.Eight, Rank.Nine, Rank.Ten, Rank.Jack, Rank.Queen, Rank.King]
+        let suits = [Suit.Spade, Suit.Heart, Suit.Diamond, Suit.Club]
+        var cards = [Card]()
+        for suit in suits {
+            for rank in ranks {
+                cards.append(FrenchCard(rank: rank, suit: suit))
+            }
+        }
+        return cards
     }
 }

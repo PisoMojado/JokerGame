@@ -16,6 +16,7 @@
 		4C20E5951E3572B400850080 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C20E5941E3572B400850080 /* Card.swift */; };
 		4C20E5971E3572C000850080 /* FrenchCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C20E5961E3572C000850080 /* FrenchCard.swift */; };
 		4C20E5991E35730D00850080 /* Joker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C20E5981E35730D00850080 /* Joker.swift */; };
+		4C20E59B1E35751200850080 /* NamedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C20E59A1E35751200850080 /* NamedData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		4C20E5941E3572B400850080 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		4C20E5961E3572C000850080 /* FrenchCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrenchCard.swift; sourceTree = "<group>"; };
 		4C20E5981E35730D00850080 /* Joker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Joker.swift; sourceTree = "<group>"; };
+		4C20E59A1E35751200850080 /* NamedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamedData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			children = (
 				388CF6D31E28B3CB00EE1A70 /* AppDelegate.swift */,
 				388CF6D51E28B3CB00EE1A70 /* ViewController.swift */,
+				4C20E59A1E35751200850080 /* NamedData.swift */,
 				388CF6D71E28B3CB00EE1A70 /* Main.storyboard */,
 				388CF6DA1E28B3CB00EE1A70 /* Assets.xcassets */,
 				388CF6DC1E28B3CB00EE1A70 /* LaunchScreen.storyboard */,
@@ -153,6 +156,7 @@
 				388CF6D41E28B3CB00EE1A70 /* AppDelegate.swift in Sources */,
 				4C20E5951E3572B400850080 /* Card.swift in Sources */,
 				4C20E5971E3572C000850080 /* FrenchCard.swift in Sources */,
+				4C20E59B1E35751200850080 /* NamedData.swift in Sources */,
 				4C20E5991E35730D00850080 /* Joker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

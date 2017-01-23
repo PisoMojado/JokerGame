@@ -1,5 +1,5 @@
 //
-//  JokerCard.swift
+//  Nameable.swift
 //  JokerGame
 //
 //  Created by Michael Jones on 1/22/17.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct Joker: Card {
-    var name: String = "Joker"
+protocol NamedData {
+    var name: String { get }
 }
