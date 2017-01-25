@@ -25,6 +25,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         myDeck.addCards(cards: myDeck.cards)
         myDeck.shuffle()
+        dealInitialHand()
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,6 +64,7 @@ class ViewController: UIViewController {
         showTopCard()
         storeCardData()
         dealCard()
+        
     }
 
     @IBOutlet weak var submit: UIButton!
@@ -197,5 +199,28 @@ class ViewController: UIViewController {
     
     func updateCardUI(card: UIButton, cardName: String) {
         card.setImage(UIImage(named: cardName+".png"), for: UIControlState.normal)
+    }
+    
+    func dealInitialHand() {
+        selectedCard = 1
+        showTopCard()
+        dealCard()
+        selectedCard = 2
+        showTopCard()
+        dealCard()
+        selectedCard = 3
+        showTopCard()
+        dealCard()
+        selectedCard = 4
+        showTopCard()
+        dealCard()
+        selectedCard = 5
+        showTopCard()
+        dealCard()
+        selectedCard = 6
+        showTopCard()
+        dealCard()
+        selectedCard = 1
+
     }
 }
