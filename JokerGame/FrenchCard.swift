@@ -12,7 +12,7 @@ struct FrenchCard: Card {
     enum Rank: Int {
         case Ace = 1
         case Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten
-        case Jack, Queen, King
+        case Jack, Queen, King, Joker
         
         func rankDescription() -> String {
             switch self{
@@ -20,9 +20,10 @@ struct FrenchCard: Card {
             case.Queen: return "Queen"
             case.King: return "King"
             case.Ace: return "Ace"
+            case.Joker: return "Joker"
             default: return String(self.rawValue)
-            }    }
-        
+            }
+        }
     }
     
     enum Suit: String {
@@ -56,9 +57,11 @@ struct FrenchCard: Card {
     let rank: Rank
     let suit: Suit
     var name: String
+    var cardRankID: Int
     
     init(rank: Rank, suit: Suit) {
         self.rank = rank
+        self.cardRankID = self.rank.rawValue
         self.suit = suit
         name = FrenchCard.getCardName(rank: rank, suit: suit)
     }

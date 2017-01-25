@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3868345F1E38488C0066BBA8 /* CardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3868345E1E38488C0066BBA8 /* CardData.swift */; };
 		388CF6D41E28B3CB00EE1A70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388CF6D31E28B3CB00EE1A70 /* AppDelegate.swift */; };
 		388CF6D61E28B3CB00EE1A70 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388CF6D51E28B3CB00EE1A70 /* ViewController.swift */; };
 		388CF6D91E28B3CB00EE1A70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 388CF6D71E28B3CB00EE1A70 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3868345E1E38488C0066BBA8 /* CardData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardData.swift; sourceTree = "<group>"; };
 		388CF6D01E28B3CB00EE1A70 /* JokerGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JokerGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		388CF6D31E28B3CB00EE1A70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		388CF6D51E28B3CB00EE1A70 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				388CF6DC1E28B3CB00EE1A70 /* LaunchScreen.storyboard */,
 				388CF6DF1E28B3CB00EE1A70 /* Info.plist */,
 				4C20E5921E3572A000850080 /* Deck.swift */,
+				3868345E1E38488C0066BBA8 /* CardData.swift */,
 				4C20E5941E3572B400850080 /* Card.swift */,
 				4C20E5961E3572C000850080 /* FrenchCard.swift */,
 				4C20E5981E35730D00850080 /* Joker.swift */,
@@ -156,6 +159,7 @@
 				388CF6D41E28B3CB00EE1A70 /* AppDelegate.swift in Sources */,
 				4C20E5951E3572B400850080 /* Card.swift in Sources */,
 				4C20E5971E3572C000850080 /* FrenchCard.swift in Sources */,
+				3868345F1E38488C0066BBA8 /* CardData.swift in Sources */,
 				4C20E59B1E35751200850080 /* NamedData.swift in Sources */,
 				4C20E5991E35730D00850080 /* Joker.swift in Sources */,
 			);

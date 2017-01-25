@@ -9,5 +9,5 @@
 import Foundation
 
 protocol Card : NamedData {
-    
+    var cardRankID:Int {get}
 }

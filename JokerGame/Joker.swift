@@ -10,4 +10,5 @@ import Foundation
 
 struct Joker: Card {
     var name: String = "Joker"
+    var cardRankID: Int = 0
 }
