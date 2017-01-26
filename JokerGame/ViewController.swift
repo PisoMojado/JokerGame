@@ -20,6 +20,14 @@ class ViewController: UIViewController {
     var card5Data = CardData()
     var card6Data = CardData()
     
+    @IBOutlet weak var submit: UIButton!
+    @IBOutlet weak var card1: UIButton!
+    @IBOutlet weak var card2: UIButton!
+    @IBOutlet weak var card3: UIButton!
+    @IBOutlet weak var card4: UIButton!
+    @IBOutlet weak var card5: UIButton!
+    @IBOutlet weak var card6: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -61,166 +69,113 @@ class ViewController: UIViewController {
     }
     
     @IBAction func submitButton(_ sender: UIButton) {
-        showTopCard()
-        storeCardData()
-        dealCard()
+        dealTopCardToHand(handIndex: selectedCard)
+        storeCardData(cardIndex: selectedCard)
+        popTopCard()
         
     }
-
-    @IBOutlet weak var submit: UIButton!
-    @IBOutlet weak var card1: UIButton!
-    @IBOutlet weak var card2: UIButton!
-    @IBOutlet weak var card3: UIButton!
-    @IBOutlet weak var card4: UIButton!
-    @IBOutlet weak var card5: UIButton!
-    @IBOutlet weak var card6: UIButton!
     
-    func storeCardData() {
-        let topCard:Card = myDeck.cards[0]
-        var cardData = CardData()
-        switch selectedCard {
+    func getUICardFromInd(cardIndex:Int) throws -> UIButton{
+        switch cardIndex {
         case 1:
-            cardData = card1Data
+            return card1
         case 2:
-            cardData = card2Data
+            return card2
         case 3:
-            cardData = card3Data
+            return card3
         case 4:
-            cardData = card4Data
+            return card4
         case 5:
-            cardData = card5Data
+            return card5
         case 6:
-            cardData = card6Data
+            return card6
         default:
-            print("Please select a card!")
-            return
+            throw CardSelectionError.BadCardSelection
         }
-        cardData.movementPoints = getMovementPoints(card: topCard)
-        cardData.leavesHome = getLeavesHome(card: topCard)
-        cardData.movesForward = getMovesForward(card: topCard)
-        cardData.splittable = getSplittable(card: topCard)
     }
     
-    func getMovementPoints(card:Card) -> Int {
-        let cardRank: Int = card.cardRankID
-        var movementPoints: Int = 0
-        switch cardRank {
-        case 1,2,3,4,5,6,7,8,9,10:
-            movementPoints = card.cardRankID
-        case 11,12,13:
-            movementPoints = 10
-        case 0:
-            movementPoints = 1
+    func getCardIndFromUI(cardUI: UIButton) throws -> Int {
+        switch cardUI {
+        case self.card1:
+            return 1
+        case self.card2:
+            return 2
+        case self.card3:
+            return 3
+        case self.card4:
+            return 4
+        case self.card5:
+            return 5
+        case self.card6:
+            return 6
         default:
-            print("Card does not have a viable rank!")
+            throw CardSelectionError.BadCardSelection
         }
-        // Debugger text
-        // print("The card has \(movementPoints) movement points")
-        return movementPoints
-    }
-   
-    func getLeavesHome(card:Card) -> Bool {
-        let cardRank: Int = card.cardRankID
-        var leavesHome: Bool = false
-        switch cardRank {
-        case 2,3,4,5,6,7,8,9,10:
-            leavesHome = false
-        case 0,1,11,12,13:
-            leavesHome = true
-        default:
-            print("Card does not have a viable rank!")
-        }
-        // Debugger text
-        // print("It is \(leavesHome) that the card can get a marble out")
-        return leavesHome
     }
     
-    func getMovesForward(card:Card) -> Bool {
-        let cardRank: Int = card.cardRankID
-        var movesForward: Bool = true
-        switch cardRank {
-        case 0,1,2,3,4,5,6,7,9,10,11,12,13:
-            movesForward = true
-        case 8:
-            movesForward = false
+    func getCardDataFromInd(cardIndex:Int) throws -> CardData {
+        switch cardIndex {
+        case 1:
+            return card1Data
+        case 2:
+            return card2Data
+        case 3:
+            return card3Data
+        case 4:
+            return card4Data
+        case 5:
+            return card5Data
+        case 6:
+            return card6Data
         default:
-            print("Card does not have a viable rank!")
+            throw CardSelectionError.BadCardSelection
         }
-        // Debugger text
-        // print("It is \(movesForward) that the card moves the marble forward")
-        return movesForward
     }
     
-    func getSplittable(card:Card) -> Bool {
-        let cardRank: Int = card.cardRankID
-        var splittable: Bool = true
-        switch cardRank {
-        case 0,1,2,3,4,5,6,8,9,10,11,12,13:
-            splittable = false
-        case 7:
-            splittable = true
-        default:
-            print("Card does not have a viable rank!")
-        }
-        // Debugger text
-        // print("It is \(splittable) that the card can be split between two marbles")
-        return splittable
+    enum CardSelectionError : Error {
+        case BadCardSelection
     }
     
-    func dealCard() -> Card {
+    func storeCardData(cardIndex:Int) {
+        let topCard:Card = myDeck.cards[0]
+        do {
+            var cardData = try getCardDataFromInd(cardIndex: cardIndex)
+            cardData.movementPoints = getMovementPoints(card: topCard)
+            cardData.leavesHome = getLeavesHome(card: topCard)
+            cardData.movesForward = getMovesForward(card: topCard)
+            cardData.splittable = getSplittable(card: topCard)
+        } catch {
+            
+        }
+    }
+    
+    func popTopCard() -> Card {
         let topCard:Card = myDeck.cards[0]
         myDeck.removeCards(num: 1, cards: myDeck.cards)
         return topCard
-    }
-    
-    func showTopCard() {
-        let topCard:Card = myDeck.cards[0]
-        let cardName = topCard.name
-        var card: UIButton
-        switch selectedCard {
-            case 1:
-                card = self.card1
-            case 2:
-                card = self.card2
-            case 3:
-                card = self.card3
-            case 4:
-                card = self.card4
-            case 5:
-                card = self.card5
-            case 6:
-                card = self.card6
-            default:
-                print("Please select a card!")
-                return
-        }
-        updateCardUI(card: card, cardName: cardName)
     }
     
     func updateCardUI(card: UIButton, cardName: String) {
         card.setImage(UIImage(named: cardName+".png"), for: UIControlState.normal)
     }
     
+    func dealTopCardToHand(handIndex:Int) {
+        let topCard:Card = myDeck.cards[0]
+        let cardName = topCard.name
+        do {
+            updateCardUI(card: try getUICardFromInd(cardIndex: selectedCard), cardName: cardName)
+        } catch {
+            
+        }
+        popTopCard()
+    }
+    
     func dealInitialHand() {
-        selectedCard = 1
-        showTopCard()
-        dealCard()
-        selectedCard = 2
-        showTopCard()
-        dealCard()
-        selectedCard = 3
-        showTopCard()
-        dealCard()
-        selectedCard = 4
-        showTopCard()
-        dealCard()
-        selectedCard = 5
-        showTopCard()
-        dealCard()
-        selectedCard = 6
-        showTopCard()
-        dealCard()
-        selectedCard = 1
-
+        dealTopCardToHand(handIndex: 1)
+        dealTopCardToHand(handIndex: 2)
+        dealTopCardToHand(handIndex: 3)
+        dealTopCardToHand(handIndex: 4)
+        dealTopCardToHand(handIndex: 5)
+        dealTopCardToHand(handIndex: 6)
     }
 }
